@@ -1,0 +1,24 @@
+[2024-08-07T15:28:39.599+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-07T15:28:39.615+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_prueba_tecnica.ingesta scheduled__2024-07-27T00:00:00+00:00 [queued]>
+[2024-08-07T15:28:39.621+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_prueba_tecnica.ingesta scheduled__2024-07-27T00:00:00+00:00 [queued]>
+[2024-08-07T15:28:39.621+0000] {taskinstance.py:2306} INFO - Starting attempt 5 of 6
+[2024-08-07T15:28:39.633+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): ingesta> on 2024-07-27 00:00:00+00:00
+[2024-08-07T15:28:39.639+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=60) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-07T15:28:39.640+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_prueba_tecnica', 'ingesta', 'scheduled__2024-07-27T00:00:00+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/dag_prueba_tecnica.py', '--cfg-path', '/tmp/tmpt6vva55t']
+[2024-08-07T15:28:39.640+0000] {standard_task_runner.py:64} INFO - Started process 87 to run task
+[2024-08-07T15:28:39.641+0000] {standard_task_runner.py:91} INFO - Job 88: Subtask ingesta
+[2024-08-07T15:28:39.674+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_prueba_tecnica.ingesta scheduled__2024-07-27T00:00:00+00:00 [running]> on host 278ba5711b2c
+[2024-08-07T15:28:39.731+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='miguel_guimarey' AIRFLOW_CTX_DAG_ID='dag_prueba_tecnica' AIRFLOW_CTX_TASK_ID='ingesta' AIRFLOW_CTX_EXECUTION_DATE='2024-07-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-27T00:00:00+00:00'
+[2024-08-07T15:28:39.732+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-07T15:28:40.769+0000] {warnings.py:112} WARNING - /opt/***/dags/dag_prueba_tecnica.py:29: DtypeWarning: Columns (46,56,59) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv('/opt/***/dags/dataset.csv', delimiter=';').to_json(orient='records')
+
+[2024-08-07T15:28:42.448+0000] {logging_mixin.py:188} INFO - Se lee el dataset de datos
+[2024-08-07T15:29:26.529+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-08-07T15:29:26.530+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-07T15:29:26.537+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_prueba_tecnica, task_id=ingesta, run_id=scheduled__2024-07-27T00:00:00+00:00, execution_date=20240727T000000, start_date=20240807T152839, end_date=20240807T152926
+[2024-08-07T15:29:26.567+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-08-07T15:29:26.586+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-07T15:29:26.589+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

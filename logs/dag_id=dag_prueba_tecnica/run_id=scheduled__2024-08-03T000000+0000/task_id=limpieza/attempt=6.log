@@ -1,0 +1,53 @@
+[2024-08-07T15:41:57.418+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-07T15:41:57.438+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_prueba_tecnica.limpieza scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-08-07T15:41:57.443+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_prueba_tecnica.limpieza scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-08-07T15:41:57.443+0000] {taskinstance.py:2306} INFO - Starting attempt 6 of 6
+[2024-08-07T15:41:57.454+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): limpieza> on 2024-08-03 00:00:00+00:00
+[2024-08-07T15:41:57.462+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=179) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-07T15:41:57.462+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_prueba_tecnica', 'limpieza', 'scheduled__2024-08-03T00:00:00+00:00', '--job-id', '120', '--raw', '--subdir', 'DAGS_FOLDER/dag_prueba_tecnica.py', '--cfg-path', '/tmp/tmpd5cvqsbs']
+[2024-08-07T15:41:57.463+0000] {standard_task_runner.py:64} INFO - Started process 192 to run task
+[2024-08-07T15:41:57.463+0000] {standard_task_runner.py:91} INFO - Job 120: Subtask limpieza
+[2024-08-07T15:41:57.498+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_prueba_tecnica.limpieza scheduled__2024-08-03T00:00:00+00:00 [running]> on host 278ba5711b2c
+[2024-08-07T15:41:57.556+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='miguel_guimarey' AIRFLOW_CTX_DAG_ID='dag_prueba_tecnica' AIRFLOW_CTX_TASK_ID='limpieza' AIRFLOW_CTX_EXECUTION_DATE='2024-08-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-03T00:00:00+00:00'
+[2024-08-07T15:41:57.557+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-07T15:42:01.217+0000] {warnings.py:112} WARNING - /opt/***/dags/dag_prueba_tecnica.py:42: FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+  df = pd.read_json(data, orient='records')
+
+[2024-08-07T15:42:12.529+0000] {base.py:84} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-08-07T15:42:12.543+0000] {base.py:84} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-08-07T15:42:12.545+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-07T15:42:12.546+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_prueba_tecnica.py", line 70, in limpiezaDatos
+    pg_hook.insert_rows('table_name2', df_normado)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/common/sql/hooks/sql.py", line 606, in insert_rows
+    cur.executemany(sql, values)
+psycopg2.errors.UndefinedTable: relation "table_name2" does not exist
+LINE 1: INSERT INTO table_name2  VALUES ('r','e','v','_','M','e','a'...
+                    ^
+
+[2024-08-07T15:42:12.553+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dag_prueba_tecnica, task_id=limpieza, run_id=scheduled__2024-08-03T00:00:00+00:00, execution_date=20240803T000000, start_date=20240807T154157, end_date=20240807T154212
+[2024-08-07T15:42:12.567+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 120 for task limpieza (relation "table_name2" does not exist
+LINE 1: INSERT INTO table_name2  VALUES ('r','e','v','_','M','e','a'...
+                    ^
+; 192)
+[2024-08-07T15:42:12.686+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-08-07T15:42:12.702+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-07T15:42:12.707+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

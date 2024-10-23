@@ -1,0 +1,21 @@
+[2024-08-07T15:18:49.967+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-07T15:18:50.006+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_prueba_tecnica.limpieza scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-08-07T15:18:50.014+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_prueba_tecnica.limpieza scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-08-07T15:18:50.015+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 6
+[2024-08-07T15:18:50.032+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): limpieza> on 2024-08-03 00:00:00+00:00
+[2024-08-07T15:18:50.057+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_prueba_tecnica', 'limpieza', 'scheduled__2024-08-03T00:00:00+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/dag_prueba_tecnica.py', '--cfg-path', '/tmp/tmpuouodhub']
+[2024-08-07T15:18:50.056+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=287) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-07T15:18:50.058+0000] {standard_task_runner.py:91} INFO - Job 64: Subtask limpieza
+[2024-08-07T15:18:50.058+0000] {standard_task_runner.py:64} INFO - Started process 310 to run task
+[2024-08-07T15:18:50.117+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_prueba_tecnica.limpieza scheduled__2024-08-03T00:00:00+00:00 [running]> on host 278ba5711b2c
+[2024-08-07T15:18:50.247+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='miguel_guimarey' AIRFLOW_CTX_DAG_ID='dag_prueba_tecnica' AIRFLOW_CTX_TASK_ID='limpieza' AIRFLOW_CTX_EXECUTION_DATE='2024-08-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-03T00:00:00+00:00'
+[2024-08-07T15:18:50.248+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-07T15:18:56.071+0000] {warnings.py:112} WARNING - /opt/***/dags/dag_prueba_tecnica.py:37: FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+  df = pd.read_json(data, orient='records')
+
+[2024-08-07T15:19:08.982+0000] {base.py:84} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-08-07T15:19:51.720+0000] {local_task_job_runner.py:243} INFO - Task exited with return code -9For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed
+[2024-08-07T15:19:51.762+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-07T15:19:51.766+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

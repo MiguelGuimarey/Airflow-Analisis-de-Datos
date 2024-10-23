@@ -1,0 +1,127 @@
+[2024-08-12T10:57:06.545+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-12T10:57:06.566+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_prueba_tecnica.entrenamiento scheduled__2024-08-10T00:00:00+00:00 [queued]>
+[2024-08-12T10:57:06.572+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_prueba_tecnica.entrenamiento scheduled__2024-08-10T00:00:00+00:00 [queued]>
+[2024-08-12T10:57:06.573+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-08-12T10:57:06.585+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): entrenamiento> on 2024-08-10 00:00:00+00:00
+[2024-08-12T10:57:06.592+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=1427) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-12T10:57:06.593+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_prueba_tecnica', 'entrenamiento', 'scheduled__2024-08-10T00:00:00+00:00', '--job-id', '282', '--raw', '--subdir', 'DAGS_FOLDER/dag_prueba_tecnica.py', '--cfg-path', '/tmp/tmpjxeh0c35']
+[2024-08-12T10:57:06.593+0000] {standard_task_runner.py:64} INFO - Started process 1440 to run task
+[2024-08-12T10:57:06.593+0000] {standard_task_runner.py:91} INFO - Job 282: Subtask entrenamiento
+[2024-08-12T10:57:06.628+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_prueba_tecnica.entrenamiento scheduled__2024-08-10T00:00:00+00:00 [running]> on host 0ad27a48216c
+[2024-08-12T10:57:06.693+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='miguel_guimarey' AIRFLOW_CTX_DAG_ID='dag_prueba_tecnica' AIRFLOW_CTX_TASK_ID='entrenamiento' AIRFLOW_CTX_EXECUTION_DATE='2024-08-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-10T00:00:00+00:00'
+[2024-08-12T10:57:06.694+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-12T10:57:06.700+0000] {base.py:84} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2024-08-12T10:57:13.985+0000] {logging_mixin.py:188} INFO - Entrenamos el modelo
+[2024-08-12T10:57:14.385+0000] {logging_mixin.py:188} INFO - [0]	validation_0-auc:0.64309
+[2024-08-12T10:57:14.411+0000] {logging_mixin.py:188} INFO - [1]	validation_0-auc:0.65000
+[2024-08-12T10:57:14.419+0000] {logging_mixin.py:188} INFO - [2]	validation_0-auc:0.65650
+[2024-08-12T10:57:14.426+0000] {logging_mixin.py:188} INFO - [3]	validation_0-auc:0.66018
+[2024-08-12T10:57:14.435+0000] {logging_mixin.py:188} INFO - [4]	validation_0-auc:0.66084
+[2024-08-12T10:57:14.442+0000] {logging_mixin.py:188} INFO - [5]	validation_0-auc:0.66346
+[2024-08-12T10:57:14.451+0000] {logging_mixin.py:188} INFO - [6]	validation_0-auc:0.66695
+[2024-08-12T10:57:14.458+0000] {logging_mixin.py:188} INFO - [7]	validation_0-auc:0.67142
+[2024-08-12T10:57:14.466+0000] {logging_mixin.py:188} INFO - [8]	validation_0-auc:0.67278
+[2024-08-12T10:57:14.474+0000] {logging_mixin.py:188} INFO - [9]	validation_0-auc:0.67381
+[2024-08-12T10:57:14.482+0000] {logging_mixin.py:188} INFO - [10]	validation_0-auc:0.67610
+[2024-08-12T10:57:14.490+0000] {logging_mixin.py:188} INFO - [11]	validation_0-auc:0.67655
+[2024-08-12T10:57:14.509+0000] {logging_mixin.py:188} INFO - [12]	validation_0-auc:0.67815
+[2024-08-12T10:57:14.548+0000] {logging_mixin.py:188} INFO - [13]	validation_0-auc:0.67874
+[2024-08-12T10:57:14.584+0000] {logging_mixin.py:188} INFO - [14]	validation_0-auc:0.67847
+[2024-08-12T10:57:14.595+0000] {logging_mixin.py:188} INFO - [15]	validation_0-auc:0.68046
+[2024-08-12T10:57:14.603+0000] {logging_mixin.py:188} INFO - [16]	validation_0-auc:0.68222
+[2024-08-12T10:57:14.612+0000] {logging_mixin.py:188} INFO - [17]	validation_0-auc:0.68232
+[2024-08-12T10:57:14.619+0000] {logging_mixin.py:188} INFO - [18]	validation_0-auc:0.68252
+[2024-08-12T10:57:14.626+0000] {logging_mixin.py:188} INFO - [19]	validation_0-auc:0.68290
+[2024-08-12T10:57:14.634+0000] {logging_mixin.py:188} INFO - [20]	validation_0-auc:0.68216
+[2024-08-12T10:57:14.643+0000] {logging_mixin.py:188} INFO - [21]	validation_0-auc:0.68306
+[2024-08-12T10:57:14.652+0000] {logging_mixin.py:188} INFO - [22]	validation_0-auc:0.68293
+[2024-08-12T10:57:14.658+0000] {logging_mixin.py:188} INFO - [23]	validation_0-auc:0.68334
+[2024-08-12T10:57:14.667+0000] {logging_mixin.py:188} INFO - [24]	validation_0-auc:0.68413
+[2024-08-12T10:57:14.683+0000] {logging_mixin.py:188} INFO - [25]	validation_0-auc:0.68420
+[2024-08-12T10:57:14.696+0000] {logging_mixin.py:188} INFO - [26]	validation_0-auc:0.68382
+[2024-08-12T10:57:14.712+0000] {logging_mixin.py:188} INFO - [27]	validation_0-auc:0.68347
+[2024-08-12T10:57:14.726+0000] {logging_mixin.py:188} INFO - [28]	validation_0-auc:0.68391
+[2024-08-12T10:57:14.732+0000] {logging_mixin.py:188} INFO - [29]	validation_0-auc:0.68385
+[2024-08-12T10:57:14.738+0000] {logging_mixin.py:188} INFO - [30]	validation_0-auc:0.68393
+[2024-08-12T10:57:14.745+0000] {logging_mixin.py:188} INFO - [31]	validation_0-auc:0.68350
+[2024-08-12T10:57:14.751+0000] {logging_mixin.py:188} INFO - [32]	validation_0-auc:0.68348
+[2024-08-12T10:57:14.757+0000] {logging_mixin.py:188} INFO - [33]	validation_0-auc:0.68337
+[2024-08-12T10:57:14.764+0000] {logging_mixin.py:188} INFO - [34]	validation_0-auc:0.68364
+[2024-08-12T10:57:14.782+0000] {logging_mixin.py:188} INFO - [35]	validation_0-auc:0.68320
+[2024-08-12T10:57:14.794+0000] {logging_mixin.py:188} INFO - [36]	validation_0-auc:0.68295
+[2024-08-12T10:57:14.802+0000] {logging_mixin.py:188} INFO - [37]	validation_0-auc:0.68358
+[2024-08-12T10:57:14.809+0000] {logging_mixin.py:188} INFO - [38]	validation_0-auc:0.68338
+[2024-08-12T10:57:14.814+0000] {logging_mixin.py:188} INFO - [39]	validation_0-auc:0.68373
+[2024-08-12T10:57:14.821+0000] {logging_mixin.py:188} INFO - [40]	validation_0-auc:0.68468
+[2024-08-12T10:57:14.828+0000] {logging_mixin.py:188} INFO - [41]	validation_0-auc:0.68543
+[2024-08-12T10:57:14.846+0000] {logging_mixin.py:188} INFO - [42]	validation_0-auc:0.68535
+[2024-08-12T10:57:14.853+0000] {logging_mixin.py:188} INFO - [43]	validation_0-auc:0.68540
+[2024-08-12T10:57:14.860+0000] {logging_mixin.py:188} INFO - [44]	validation_0-auc:0.68506
+[2024-08-12T10:57:14.867+0000] {logging_mixin.py:188} INFO - [45]	validation_0-auc:0.68511
+[2024-08-12T10:57:14.875+0000] {logging_mixin.py:188} INFO - [46]	validation_0-auc:0.68580
+[2024-08-12T10:57:14.886+0000] {logging_mixin.py:188} INFO - [47]	validation_0-auc:0.68598
+[2024-08-12T10:57:14.900+0000] {logging_mixin.py:188} INFO - [48]	validation_0-auc:0.68577
+[2024-08-12T10:57:14.908+0000] {logging_mixin.py:188} INFO - [49]	validation_0-auc:0.68577
+[2024-08-12T10:57:14.933+0000] {logging_mixin.py:188} INFO - [50]	validation_0-auc:0.68630
+[2024-08-12T10:57:14.948+0000] {logging_mixin.py:188} INFO - [51]	validation_0-auc:0.68697
+[2024-08-12T10:57:14.962+0000] {logging_mixin.py:188} INFO - [52]	validation_0-auc:0.68660
+[2024-08-12T10:57:14.983+0000] {logging_mixin.py:188} INFO - [53]	validation_0-auc:0.68681
+[2024-08-12T10:57:14.999+0000] {logging_mixin.py:188} INFO - [54]	validation_0-auc:0.68669
+[2024-08-12T10:57:15.024+0000] {logging_mixin.py:188} INFO - [55]	validation_0-auc:0.68691
+[2024-08-12T10:57:15.036+0000] {logging_mixin.py:188} INFO - [56]	validation_0-auc:0.68695
+[2024-08-12T10:57:15.052+0000] {logging_mixin.py:188} INFO - [57]	validation_0-auc:0.68765
+[2024-08-12T10:57:15.065+0000] {logging_mixin.py:188} INFO - [58]	validation_0-auc:0.68757
+[2024-08-12T10:57:15.087+0000] {logging_mixin.py:188} INFO - [59]	validation_0-auc:0.68843
+[2024-08-12T10:57:15.106+0000] {logging_mixin.py:188} INFO - [60]	validation_0-auc:0.68783
+[2024-08-12T10:57:15.118+0000] {logging_mixin.py:188} INFO - [61]	validation_0-auc:0.68768
+[2024-08-12T10:57:15.133+0000] {logging_mixin.py:188} INFO - [62]	validation_0-auc:0.68709
+[2024-08-12T10:57:15.147+0000] {logging_mixin.py:188} INFO - [63]	validation_0-auc:0.68664
+[2024-08-12T10:57:15.162+0000] {logging_mixin.py:188} INFO - [64]	validation_0-auc:0.68732
+[2024-08-12T10:57:15.179+0000] {logging_mixin.py:188} INFO - [65]	validation_0-auc:0.68842
+[2024-08-12T10:57:15.193+0000] {logging_mixin.py:188} INFO - [66]	validation_0-auc:0.68827
+[2024-08-12T10:57:15.201+0000] {logging_mixin.py:188} INFO - [67]	validation_0-auc:0.68798
+[2024-08-12T10:57:15.210+0000] {logging_mixin.py:188} INFO - [68]	validation_0-auc:0.68794
+[2024-08-12T10:57:15.229+0000] {logging_mixin.py:188} INFO - [69]	validation_0-auc:0.68792
+[2024-08-12T10:57:15.243+0000] {logging_mixin.py:188} INFO - [70]	validation_0-auc:0.68788
+[2024-08-12T10:57:15.256+0000] {logging_mixin.py:188} INFO - [71]	validation_0-auc:0.68782
+[2024-08-12T10:57:15.268+0000] {logging_mixin.py:188} INFO - [72]	validation_0-auc:0.68806
+[2024-08-12T10:57:15.276+0000] {logging_mixin.py:188} INFO - [73]	validation_0-auc:0.68847
+[2024-08-12T10:57:15.289+0000] {logging_mixin.py:188} INFO - [74]	validation_0-auc:0.68804
+[2024-08-12T10:57:15.299+0000] {logging_mixin.py:188} INFO - [75]	validation_0-auc:0.68826
+[2024-08-12T10:57:15.307+0000] {logging_mixin.py:188} INFO - [76]	validation_0-auc:0.68839
+[2024-08-12T10:57:15.313+0000] {logging_mixin.py:188} INFO - [77]	validation_0-auc:0.68849
+[2024-08-12T10:57:15.320+0000] {logging_mixin.py:188} INFO - [78]	validation_0-auc:0.68826
+[2024-08-12T10:57:15.329+0000] {logging_mixin.py:188} INFO - [79]	validation_0-auc:0.68792
+[2024-08-12T10:57:15.336+0000] {logging_mixin.py:188} INFO - [80]	validation_0-auc:0.68799
+[2024-08-12T10:57:15.348+0000] {logging_mixin.py:188} INFO - [81]	validation_0-auc:0.68817
+[2024-08-12T10:57:15.357+0000] {logging_mixin.py:188} INFO - [82]	validation_0-auc:0.68860
+[2024-08-12T10:57:15.436+0000] {logging_mixin.py:188} INFO - [83]	validation_0-auc:0.68813
+[2024-08-12T10:57:15.772+0000] {logging_mixin.py:188} INFO - [84]	validation_0-auc:0.68739
+[2024-08-12T10:57:15.995+0000] {logging_mixin.py:188} INFO - [85]	validation_0-auc:0.68722
+[2024-08-12T10:57:16.026+0000] {logging_mixin.py:188} INFO - [86]	validation_0-auc:0.68661
+[2024-08-12T10:57:16.037+0000] {logging_mixin.py:188} INFO - [87]	validation_0-auc:0.68690
+[2024-08-12T10:57:16.044+0000] {logging_mixin.py:188} INFO - [88]	validation_0-auc:0.68658
+[2024-08-12T10:57:16.051+0000] {logging_mixin.py:188} INFO - [89]	validation_0-auc:0.68660
+[2024-08-12T10:57:16.057+0000] {logging_mixin.py:188} INFO - [90]	validation_0-auc:0.68658
+[2024-08-12T10:57:16.063+0000] {logging_mixin.py:188} INFO - [91]	validation_0-auc:0.68642
+[2024-08-12T10:57:16.068+0000] {logging_mixin.py:188} INFO - [92]	validation_0-auc:0.68646
+[2024-08-12T10:57:16.073+0000] {logging_mixin.py:188} INFO - [93]	validation_0-auc:0.68585
+[2024-08-12T10:57:16.079+0000] {logging_mixin.py:188} INFO - [94]	validation_0-auc:0.68586
+[2024-08-12T10:57:16.085+0000] {logging_mixin.py:188} INFO - [95]	validation_0-auc:0.68545
+[2024-08-12T10:57:16.093+0000] {logging_mixin.py:188} INFO - [96]	validation_0-auc:0.68539
+[2024-08-12T10:57:16.099+0000] {logging_mixin.py:188} INFO - [97]	validation_0-auc:0.68532
+[2024-08-12T10:57:16.104+0000] {logging_mixin.py:188} INFO - [98]	validation_0-auc:0.68442
+[2024-08-12T10:57:16.110+0000] {logging_mixin.py:188} INFO - [99]	validation_0-auc:0.68448
+[2024-08-12T10:57:16.168+0000] {logging_mixin.py:188} INFO - 
+AUC Train: 0.6272
+AUC Valid: 0.6302
+[2024-08-12T10:57:16.170+0000] {logging_mixin.py:188} INFO - 
+Accuracy: 0.6273
+[2024-08-12T10:57:16.171+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-08-12T10:57:16.171+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-12T10:57:16.179+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_prueba_tecnica, task_id=entrenamiento, run_id=scheduled__2024-08-10T00:00:00+00:00, execution_date=20240810T000000, start_date=20240812T105706, end_date=20240812T105716
+[2024-08-12T10:57:16.265+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-08-12T10:57:16.277+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-12T10:57:16.280+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
